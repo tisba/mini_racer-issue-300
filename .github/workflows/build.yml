@@ -1,0 +1,16 @@
+name: Test
+
+on: push
+
+jobs:
+  test:
+    runs-on: "ubuntu-22.04"
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3.4"
+          bundler: latest
+      - name: Run
+        run: ruby issue_300.rb
